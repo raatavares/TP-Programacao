@@ -1,26 +1,33 @@
 # depslib dependency file v1.0
-1650883589 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\matdin.c
+1654355497 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\matdin.c
 	"matdin.h"
 
-1650883541 c:\users\ricar\onedrive\documentos\github\tp-programacao\matdin.h
+1654355497 c:\users\ricar\onedrive\documentos\github\tp-programacao\matdin.h
 	<stdlib.h>
 	<stdio.h>
 
-1651272733 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\utils.c
+1654355497 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\utils.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	"utils.h"
 
-1650887379 c:\users\ricar\onedrive\documentos\github\tp-programacao\utils.h
+1654355497 c:\users\ricar\onedrive\documentos\github\tp-programacao\utils.h
 
-1654344439 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\main.c
+1654974531 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\main.c
 	"matdin.h"
 	"main.h"
 	"utils.h"
 
-1654342024 c:\users\ricar\onedrive\documentos\github\tp-programacao\main.h
+1654355497 c:\users\ricar\onedrive\documentos\github\tp-programacao\main.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
+
+1654976328 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\ficheiros.c
+	"ficheiros.h"
+
+1654976369 c:\users\ricar\onedrive\documentos\github\tp-programacao\ficheiros.h
+	<stdlib.h>
+	<stdio.h>
 

@@ -6,6 +6,7 @@
 
 #define N 3
 #define T N*N
+#define FichInterrupcao "jogo.bin"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,7 +22,7 @@ struct mini_tabuleiro{
 typedef struct tabuleiro tabuleiro, *ptrTabuleiro;
 
 struct tabuleiro{
-    ptrMini_tabuleiro mini_tab;
+    ptrMini_tabuleiro mini_tab; //vetor de 0 a 8
 };
 
 void mostra(ptrTabuleiro tabuleiro);
