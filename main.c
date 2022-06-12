@@ -81,7 +81,6 @@ int disponibilidadeMiniTab(ptrMini_tabuleiro mini_tabuleiro){
 }
 
 int disponibilidadeTabInteiro(ptrTabuleiro tabuleiro){
-    ptrMini_tabuleiro aux;
     for(int i=0; i<T; i++){
             if(disponibilidadeMiniTab(&tabuleiro->mini_tab[i]) == 1)
                 return 1;
@@ -90,33 +89,39 @@ int disponibilidadeTabInteiro(ptrTabuleiro tabuleiro){
 }
 
 char validarVencedorMiniTab(ptrMini_tabuleiro mini_tabuleiro){
+    //LINHA
     for(int e=0; e<N; e++){
-        if(getPos(mini_tabuleiro->tab, e, 0) == getPos(mini_tabuleiro->tab, e, 1) == getPos(mini_tabuleiro->tab, e, 2))
+        if(getPos(mini_tabuleiro->tab, e, 0) == getPos(mini_tabuleiro->tab, e, 1) && getPos(mini_tabuleiro->tab, e, 1) == getPos(mini_tabuleiro->tab, e, 2))
             return getPos(mini_tabuleiro->tab, e, 0);
     }
+    //COLUNA
     for(int i=0; i<N; i++){
-        if(getPos(mini_tabuleiro->tab, 0, i) == getPos(mini_tabuleiro->tab, 1, i) == getPos(mini_tabuleiro->tab, 2, i))
+        if(getPos(mini_tabuleiro->tab, 0, i) == getPos(mini_tabuleiro->tab, 1, i) && getPos(mini_tabuleiro->tab, 1, i) == getPos(mini_tabuleiro->tab, 2, i))
             return getPos(mini_tabuleiro->tab, 0, i);
     }
-    if(getPos(mini_tabuleiro->tab, 0, 0) == getPos(mini_tabuleiro->tab, 1, 1) == getPos(mini_tabuleiro->tab, 2, 2))
+    //DIAGONAIS
+    if(getPos(mini_tabuleiro->tab, 0, 0) == getPos(mini_tabuleiro->tab, 1, 1) && getPos(mini_tabuleiro->tab, 1, 1) == getPos(mini_tabuleiro->tab, 2, 2))
             return getPos(mini_tabuleiro->tab, 0, 0);
-    if(getPos(mini_tabuleiro->tab, 2, 0) == getPos(mini_tabuleiro->tab, 1, 1) == getPos(mini_tabuleiro->tab, 0, 2))
+    if(getPos(mini_tabuleiro->tab, 2, 0) == getPos(mini_tabuleiro->tab, 1, 1) && getPos(mini_tabuleiro->tab, 1, 1) == getPos(mini_tabuleiro->tab, 0, 2))
             return getPos(mini_tabuleiro->tab, 2, 0);
     return '_';
 }
 
 char validarVencedorTabuleiro(ptrTabuleiro tabuleiro){
+    //LINHA
     for(int e=0; e<N; e++){
-        if(validarVencedorMiniTab(&tabuleiro->mini_tab[0+e]) == validarVencedorMiniTab(&tabuleiro->mini_tab[1+e]) == validarVencedorMiniTab(&tabuleiro->mini_tab[2+e]))
+        if(validarVencedorMiniTab(&tabuleiro->mini_tab[0+e]) == validarVencedorMiniTab(&tabuleiro->mini_tab[1+e]) && validarVencedorMiniTab(&tabuleiro->mini_tab[1+e]) == validarVencedorMiniTab(&tabuleiro->mini_tab[2+e]))
             return validarVencedorMiniTab(&tabuleiro->mini_tab[0+e]);
     }
+    //COLUNA
     for(int i=0; i<N; i++){
-        if(validarVencedorMiniTab(&tabuleiro->mini_tab[i]) == validarVencedorMiniTab(&tabuleiro->mini_tab[i+3]) == validarVencedorMiniTab(&tabuleiro->mini_tab[i+6]))
+        if(validarVencedorMiniTab(&tabuleiro->mini_tab[i]) == validarVencedorMiniTab(&tabuleiro->mini_tab[i+3]) && validarVencedorMiniTab(&tabuleiro->mini_tab[i+3]) == validarVencedorMiniTab(&tabuleiro->mini_tab[i+6]))
             return validarVencedorMiniTab(&tabuleiro->mini_tab[i]);
     }
-    if(validarVencedorMiniTab(&tabuleiro->mini_tab[0]) == validarVencedorMiniTab(&tabuleiro->mini_tab[4]) == validarVencedorMiniTab(&tabuleiro->mini_tab[8]))
+    //DIAGONAIS
+    if(validarVencedorMiniTab(&tabuleiro->mini_tab[0]) == validarVencedorMiniTab(&tabuleiro->mini_tab[4]) && validarVencedorMiniTab(&tabuleiro->mini_tab[4]) == validarVencedorMiniTab(&tabuleiro->mini_tab[8]))
             return validarVencedorMiniTab(&tabuleiro->mini_tab[0]);
-    if(validarVencedorMiniTab(&tabuleiro->mini_tab[2]) == validarVencedorMiniTab(&tabuleiro->mini_tab[4]) == validarVencedorMiniTab(&tabuleiro->mini_tab[6]))
+    if(validarVencedorMiniTab(&tabuleiro->mini_tab[2]) == validarVencedorMiniTab(&tabuleiro->mini_tab[4]) && validarVencedorMiniTab(&tabuleiro->mini_tab[4]) == validarVencedorMiniTab(&tabuleiro->mini_tab[6]))
             return validarVencedorMiniTab(&tabuleiro->mini_tab[2]);
     return '_';
 }
@@ -131,8 +136,6 @@ int tabuleiro_ajogar( ptrTabuleiro tabuleiro, int posicao){
     }
     return posicao;
 }
-
-
 
 
 
@@ -192,8 +195,6 @@ int main(int argc, char** argv){
         printf("\n Insira o nome do Jogador 2: ");
         scanf(" %s", nome_Jogador2);
     }
-    if(validarVencedorTabuleiro(tabuleiro) == '_' && disponibilidadeTabInteiro(tabuleiro) == 1)
-        printf("Sem vencedor\n");
 
     while(validarVencedorTabuleiro(tabuleiro) == '_' && disponibilidadeTabInteiro(tabuleiro) == 1){
         mostra(tabuleiro);
@@ -214,6 +215,8 @@ int main(int argc, char** argv){
                 setPos(tabuleiro->mini_tab[posicao].tab, i, j, 'O');
         }
         //posicao=ultima posicao jogada
+        posicao=i*3+j;
+
         //Se for jogo a solo, gera jogada aleatoria
 
         do {

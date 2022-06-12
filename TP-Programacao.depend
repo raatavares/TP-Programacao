@@ -14,12 +14,13 @@
 
 1654355497 c:\users\ricar\onedrive\documentos\github\tp-programacao\utils.h
 
-1654974531 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\main.c
+1655028847 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\main.c
 	"matdin.h"
 	"main.h"
 	"utils.h"
+	"ficheiros.h"
 
-1654355497 c:\users\ricar\onedrive\documentos\github\tp-programacao\main.h
+1654978222 c:\users\ricar\onedrive\documentos\github\tp-programacao\main.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
