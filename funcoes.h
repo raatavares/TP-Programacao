@@ -19,3 +19,7 @@ char validarVencedorTabuleiro(ptrTabuleiro tabuleiro);
 int tabuleiro_ajogar( ptrTabuleiro tabuleiro, int posicao);
 
 
+
+ptrJogadas insereJogadas(ptrJogadas jogadas,ptrJogadas aux);
+
+void mostra_jogadas(ptrJogadas jogadas);

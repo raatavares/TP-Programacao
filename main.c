@@ -34,6 +34,11 @@ int main(int argc, char** argv){
 
     char Continuar_Jogo, Jogo_Solo, nome_Jogador1[20], nome_Jogador2[20], continuar;
     int posicao=-1, i, j, cont_jogadas=0;
+    ptrJogadas jogadas;
+    jogadas = NULL;
+    jogadas = Le_jogadas_texto(jogadas);
+   // mostra_jogadas(jogadas);
+
 
     //verifica se ha jogos interrompidos
     if(existeFicheiro(FichInterrupcao)==1){
@@ -41,8 +46,8 @@ int main(int argc, char** argv){
             printf("\n Ha um Jogo interrompido, deseja continuar o jogo interrompido? ");
             scanf(" %c", &Continuar_Jogo);
         }while( Continuar_Jogo != 'n' && Continuar_Jogo != 's');
-        //if(Continuar_Jogo == 's')
-            //Recupera o jogo
+        if(Continuar_Jogo == 's')
+            jogadas = Le_jogadas(jogadas);
 
         //Remove o ficheiro
     }
@@ -119,7 +124,8 @@ int main(int argc, char** argv){
     if(continuar == 'n'){
         printf("\n Introduza o nome do ficheiro! ");
         scanf(" %s", nome_ficheiro);
-        //guarda jogadas no ficheiro
+        Escreve_jogadas_texto(jogadas, nome_ficheiro);
+        Escreve_jogadas_bin(jogadas, FichInterrupcao);
     }else{
         if(validarVencedorTabuleiro(tabuleiro) == '_')
             printf("\n Empate! ");

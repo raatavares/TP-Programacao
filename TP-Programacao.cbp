@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="ficheiros.h" />
+		<Unit filename="funcoes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funcoes.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -14,32 +14,33 @@
 
 1655577836 c:\users\ricar\onedrive\documentos\github\tp-programacao\utils.h
 
-1655582779 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\main.c
+1655594151 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\main.c
 	"matdin.h"
 	"main.h"
 	"utils.h"
 	"ficheiros.h"
 	"funcoes.h"
 
-1655580468 c:\users\ricar\onedrive\documentos\github\tp-programacao\main.h
+1655588009 c:\users\ricar\onedrive\documentos\github\tp-programacao\main.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
 
-1655577811 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\ficheiros.c
+1655594004 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\ficheiros.c
 	"ficheiros.h"
 
-1655577818 c:\users\ricar\onedrive\documentos\github\tp-programacao\ficheiros.h
+1655593659 c:\users\ricar\onedrive\documentos\github\tp-programacao\ficheiros.h
 	<stdlib.h>
 	<stdio.h>
+	"main.h"
 
-1655584289 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\funcoes.c
+1655594521 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\funcoes.c
 	<stdlib.h>
 	<stdio.h>
 	"funcoes.h"
 
-1655584294 c:\users\ricar\onedrive\documentos\github\tp-programacao\funcoes.h
+1655592438 c:\users\ricar\onedrive\documentos\github\tp-programacao\funcoes.h
 	<stdlib.h>
 	<stdio.h>
 	"main.h"

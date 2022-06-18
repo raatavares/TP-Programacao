@@ -1,0 +1,2 @@
+ricardo 0 0 5
+ricardo 1 2 4

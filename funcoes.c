@@ -106,3 +106,37 @@ int tabuleiro_ajogar( ptrTabuleiro tabuleiro, int posicao){
     }while(disponibilidadeMiniTab(&tabuleiro->mini_tab[random]) == 0);
     return random;
 }
+
+// Funções para teste
+
+ptrJogadas insereJogadas(ptrJogadas jogadas,ptrJogadas aux){
+    ptrJogadas novo = malloc(sizeof (jogadas)), percorre;
+    if (novo == NULL) {
+        printf("\nErro ao alocar memoria!");
+        return jogadas;
+    }
+    novo->num_tabuleiro=aux->num_tabuleiro;
+    novo->posicao_i=aux->posicao_i;
+    novo->posicao_j=aux->posicao_j;
+    strcpy(novo->nome_jogador,aux->nome_jogador);
+    novo->prox=NULL;
+    if(jogadas == NULL){
+        jogadas = novo;
+    }else{
+        percorre=jogadas;
+        while(percorre->prox != NULL){
+            percorre=percorre->prox;
+        }
+        percorre->prox = novo;
+    }
+    return jogadas;
+}
+
+void mostra_jogadas(ptrJogadas jogadas){
+    ptrJogadas percorre;
+    percorre = jogadas;
+    while(percorre != NULL){
+        printf(" \n %s %d %d %d", percorre->nome_jogador, percorre->posicao_i, percorre->posicao_j, percorre->num_tabuleiro);
+        percorre = percorre->prox;
+    }
+}
