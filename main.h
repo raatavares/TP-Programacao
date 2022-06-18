@@ -18,7 +18,6 @@ typedef struct mini_tabuleiro mini_tabuleiro, *ptrMini_tabuleiro;
 
 struct mini_tabuleiro{
     char **tab;
-
 };
 
 typedef struct tabuleiro tabuleiro, *ptrTabuleiro;

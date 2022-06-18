@@ -8,8 +8,6 @@
 
 void mostra(ptrTabuleiro tabuleiro);
 
-void limparTabuleiro(ptrTabuleiro tabuleiro);
-
 int disponibilidadeMiniTab(ptrMini_tabuleiro mini_tabuleiro);
 
 int disponibilidadeTabInteiro(ptrTabuleiro tabuleiro);

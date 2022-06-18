@@ -11,7 +11,6 @@
 
 
 int main(int argc, char** argv){
-    int random;
     initRandom();
     ptrTabuleiro tabuleiro = NULL;
     tabuleiro=realloc(tabuleiro, sizeof(tabuleiro));
@@ -116,14 +115,19 @@ int main(int argc, char** argv){
             break;
     }
 
-    //se interronpeu guarda
-    //se nao
-    if(validarVencedorTabuleiro(tabuleiro) == '_')
-        printf("\n Empate! ");
-    else if(validarVencedorTabuleiro(tabuleiro) == 'X')
-        printf("\n Ganhou o Jogador %s", nome_Jogador1);
-    else
-        printf("\n Ganhou o Jogador %s", nome_Jogador2);
+    char nome_ficheiro[20];
+    if(continuar == 'n'){
+        printf("\n Introduza o nome do ficheiro! ");
+        scanf(" %s", nome_ficheiro);
+        //guarda jogadas no ficheiro
+    }else{
+        if(validarVencedorTabuleiro(tabuleiro) == '_')
+            printf("\n Empate! ");
+        else if(validarVencedorTabuleiro(tabuleiro) == 'X')
+            printf("\n Ganhou o Jogador %s", nome_Jogador1);
+        else
+            printf("\n Ganhou o Jogador %s", nome_Jogador2);
+    }
 
 
     return (EXIT_SUCCESS);

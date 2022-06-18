@@ -41,19 +41,6 @@ void mostra(ptrTabuleiro tabuleiro){
     }
 }
 
-
-//Ricardo
-
-void limparTabuleiro(ptrTabuleiro tabuleiro){
-    for(int i=0; i<T; i++){
-            for(int j=0; j<N; j++){
-                for(int h=0; h<N; h++){
-                    setPos(tabuleiro->mini_tab[i].tab, j, h, '_');
-                }
-            }
-    }
-}
-
 int disponibilidadeMiniTab(ptrMini_tabuleiro mini_tabuleiro){
     for(int i=0; i<N; i++){
         for(int e=0; e<N; e++){
@@ -112,11 +99,10 @@ char validarVencedorTabuleiro(ptrTabuleiro tabuleiro){
 
 int tabuleiro_ajogar( ptrTabuleiro tabuleiro, int posicao){
     int random;
-    if(posicao == -1 || disponibilidadeMiniTab(&tabuleiro->mini_tab[posicao]) == 0){
-        do{
-            random = intUniformRnd(0,8);
-        }while(disponibilidadeMiniTab(&tabuleiro->mini_tab[random]) == 0);
-        posicao=random;
-    }
-    return posicao;
+    if(posicao != -1 && disponibilidadeMiniTab(&tabuleiro->mini_tab[posicao]) != 0 && validarVencedorMiniTab(&tabuleiro->mini_tab[posicao]) == '_')
+        return posicao;
+    do{
+        random = intUniformRnd(0,8);
+    }while(disponibilidadeMiniTab(&tabuleiro->mini_tab[random]) == 0);
+    return random;
 }

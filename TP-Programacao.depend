@@ -14,14 +14,14 @@
 
 1655577836 c:\users\ricar\onedrive\documentos\github\tp-programacao\utils.h
 
-1655577701 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\main.c
+1655582779 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\main.c
 	"matdin.h"
 	"main.h"
 	"utils.h"
 	"ficheiros.h"
 	"funcoes.h"
 
-1655577795 c:\users\ricar\onedrive\documentos\github\tp-programacao\main.h
+1655580468 c:\users\ricar\onedrive\documentos\github\tp-programacao\main.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -34,12 +34,12 @@
 	<stdlib.h>
 	<stdio.h>
 
-1655577828 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\funcoes.c
+1655584289 source:c:\users\ricar\onedrive\documentos\github\tp-programacao\funcoes.c
 	<stdlib.h>
 	<stdio.h>
 	"funcoes.h"
 
-1655578003 c:\users\ricar\onedrive\documentos\github\tp-programacao\funcoes.h
+1655584294 c:\users\ricar\onedrive\documentos\github\tp-programacao\funcoes.h
 	<stdlib.h>
 	<stdio.h>
 	"main.h"
