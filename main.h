@@ -3,6 +3,7 @@
 
 // Trabalho Pratico Programacao - LEI
 // DEIS-ISEC 2021-2022
+// Ricardo Almeida de Aguiar Tavares - 2021144652
 
 #define N 3
 #define T N*N
@@ -26,7 +27,16 @@ struct tabuleiro{
     ptrMini_tabuleiro mini_tab; //vetor de 0 a 8
 };
 
-void mostra(ptrTabuleiro tabuleiro);
 
+
+typedef struct jogadas jogadas, *ptrJogadas;
+
+
+struct jogadas{
+    char nome_jogador[20];
+    int posicao_i, posicao_j;
+    int num_tabuleiro;
+    ptrJogadas prox;
+};
 
 #endif // MAIN_H_INCLUDED

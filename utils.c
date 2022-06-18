@@ -1,5 +1,6 @@
 // Trabalho Pratico Programacao - LEI
 // DEIS-ISEC 2020-2021
+// Ricardo Almeida de Aguiar Tavares - 2021144652
 
 #include <stdio.h>
 #include <stdlib.h>
