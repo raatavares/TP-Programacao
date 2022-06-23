@@ -17,7 +17,8 @@ int existeFicheiro(char *fname)
 }
 
 
-
+// Le jogadas de .txt
+//Retorna jogadas
 
 ptrJogadas Le_jogadas_texto(ptrJogadas jogadas){
     FILE *file;
@@ -46,6 +47,9 @@ ptrJogadas Le_jogadas_texto(ptrJogadas jogadas){
     return jogadas;
 }
 
+// Le jogadas de .bin
+//Retorna jogadas
+
 ptrJogadas Le_jogadas(ptrJogadas jogadas){
     FILE *file;
     ptrJogadas aux = NULL;
@@ -73,6 +77,9 @@ ptrJogadas Le_jogadas(ptrJogadas jogadas){
     return jogadas;
 }
 
+// Escreve jogadas para .txt
+//Retorna jogadas
+
 void Escreve_jogadas_texto(ptrJogadas jogadas, char *nome_ficheiro){
     FILE *file;
     ptrJogadas percorre = jogadas;
@@ -89,6 +96,9 @@ void Escreve_jogadas_texto(ptrJogadas jogadas, char *nome_ficheiro){
     fclose(file);
     return ;
 }
+
+// Escreve jogadas para .bin
+//Retorna jogadas
 
 void Escreve_jogadas_bin(ptrJogadas jogadas, char *nome_ficheiro){
     FILE *file;

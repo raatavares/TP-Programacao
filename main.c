@@ -36,8 +36,8 @@ int main(int argc, char** argv){
     int posicao=-1, i, j, cont_jogadas=0;
     ptrJogadas jogadas;
     jogadas = NULL;
-    jogadas = Le_jogadas_texto(jogadas);
-   // mostra_jogadas(jogadas);
+    //jogadas = Le_jogadas_texto(jogadas);
+
 
 
     //verifica se ha jogos interrompidos
@@ -49,7 +49,7 @@ int main(int argc, char** argv){
         if(Continuar_Jogo == 's')
             jogadas = Le_jogadas(jogadas);
 
-        //Remove o ficheiro
+
     }
 
     do {
@@ -59,7 +59,7 @@ int main(int argc, char** argv){
 
     if(Jogo_Solo == 's'){
         printf("\n Insira o nome do Jogador: ");
-        scanf(" %s", nome_Jogador1);
+        scanf("%[^\n]s",nome_Jogador1);
         strcpy(nome_Jogador2, "Computador");
     }
     else{

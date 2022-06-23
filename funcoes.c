@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include "funcoes.h"
 
+//Mostra o Tabuleiro
 void mostra(ptrTabuleiro tabuleiro){
     int tab, lin, col;
     for(lin=0; lin<N; lin++){
@@ -97,6 +98,7 @@ char validarVencedorTabuleiro(ptrTabuleiro tabuleiro){
     return '_';
 }
 
+//valida se o tabuleiro a jogar é valido, se nao for gera uma um aleatorio
 int tabuleiro_ajogar( ptrTabuleiro tabuleiro, int posicao){
     int random;
     if(posicao != -1 && disponibilidadeMiniTab(&tabuleiro->mini_tab[posicao]) != 0 && validarVencedorMiniTab(&tabuleiro->mini_tab[posicao]) == '_')
@@ -107,7 +109,7 @@ int tabuleiro_ajogar( ptrTabuleiro tabuleiro, int posicao){
     return random;
 }
 
-// Funções para teste
+// Insere uma jogada na lista ligada das jogadas
 
 ptrJogadas insereJogadas(ptrJogadas jogadas,ptrJogadas aux){
     ptrJogadas novo = malloc(sizeof (jogadas)), percorre;
@@ -132,6 +134,7 @@ ptrJogadas insereJogadas(ptrJogadas jogadas,ptrJogadas aux){
     return jogadas;
 }
 
+//Percorre a lista ligada das jogadas e mostra
 void mostra_jogadas(ptrJogadas jogadas){
     ptrJogadas percorre;
     percorre = jogadas;
